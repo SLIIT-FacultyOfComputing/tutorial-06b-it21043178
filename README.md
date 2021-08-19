@@ -23,6 +23,7 @@ class Student {
   
   // public section
   //    assignDetails() method declaration
+  void assigndetails(int pstudentid, char pname[]);
   //    display() method declaration
 }
 
@@ -34,18 +35,33 @@ class Student {
 #include <iostream>
 
 // Assign studentId and name
-Student::assignDetails() {
-  
-}
+Student::assignDetails(int pstudentid, char pname[]) {
+studentid = pstudentid;
+strcpy(name, pname);
+ }
 
 // Display StudentId and Name
-Student::display() {
+void Student::display() {
+cout << "student id "<< studentid << endl;
+cout << "name << endl;   
   
 }
 ```
 ### In Excercise01.cpp
+#include<iostream>
+  #include"stduent .h"
+  using namespace std;
+  int main(){
 1.	Do not change anything
-
+   student mystd;
+   mystd. assigndetails(1212, "amalinga:);
+   mystd.display();
+ //====================================
+ 
+ return 0;
+ }
+  
+  
 ## Exercise 2 - Rectangle Class
 ![Exercise 1](/resources/Picture2.png)
 
@@ -54,14 +70,21 @@ Using the Box.h and Box.cpp Implement the Box class
 1.	Write the prototypes for the **setters** for ```length```, ```width``` and ```height```
 2.	Write the prototypes **getters** for ```length```, ```width``` and ```height```
 ```c++
-class Box {
+
     private:
        int length;
        int width;
        int height;
     public:
        // write prototypes of setters for length, width and height
+       void setlength(int nlength);
+        void set width(int nwidth;);
+        void setheight(int nheight);  
        // write prototypes of getters for length, width and height 
+       int getlength();
+       int getwidth();
+       int getheight();
+       
     int calcVolume();
 };
 ```
@@ -73,14 +96,33 @@ class Box {
 #include "Box.h"
 
 // Implement setters and getters
+void box::setlength(int nlength){
+length = nlength;
+}
+void box::setwidth(int nwidth){
+width = nwidth;
+}
+void box::setheight(int nheight){
+height = nheight;
+}
+int box::getwidth(){
+return width;
+}
+int box::getheight(){
+return height;
+}
+int box::getlength(){
+return length;
+}
 
 // Implmenet the calcVolume() unction
 int Box::calcVolume() {
+return height * length * width;
 }
 ```
 
 ### In Exercise02.cpp
 1.	Create a ```Box``` type object called box1
-2.	Assign the keyboard input of ```length```, ```width``` and ```height``` to the box1 object using setters
-3.	Do not change any other coding in the Exercise02.cpp
+3.	Assign the keyboard input of ```length```, ```width``` and ```height``` to the box1 object using setters
+4.	Do not change any other coding in the Exercise02.cpp
 
